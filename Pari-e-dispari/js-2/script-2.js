@@ -7,10 +7,8 @@ function randomNumber(min,max){
     return random;
 }
 //controllo se nel prompt di prima l' utente abbia inserito un numero coerente con il gioco
-for (let i = 0 ; i < userNumber ; i++){
-    if(userNumber<1 || userNumber>5){
-        console.log('attenzione hai selezionato un numero non compreso tra 1 e 5')
-    }
+if(userNumber<1 || userNumber>5){
+    console.log('attenzione hai selezionato un numero non compreso tra 1 e 5');
 }
 console.log(userNumber);
 //numero randomico generato dalla macchina
