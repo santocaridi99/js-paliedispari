@@ -6,10 +6,6 @@ function randomNumber(min,max){
     let random = Math.floor(Math.random() * ((max + 1) - min)) + min;
     return random;
 }
-//controllo se nel prompt di prima l' utente abbia inserito un numero coerente con il gioco
-if(userNumber<1 || userNumber>5){
-    console.log('attenzione hai selezionato un numero non compreso tra 1 e 5');
-}
 console.log(userNumber);
 //numero randomico generato dalla macchina
 let manchineNumber = randomNumber(1 , 5);
@@ -18,17 +14,25 @@ console.log(manchineNumber);
 let total = userNumber + manchineNumber;
 console.log(total);
 //vedere chi ha vinto
-if(userChoice.toLowerCase() != "pari" && userChoice.toLowerCase() != "dispari"){
-    console.log('attenzione non hai dato una scelta')
-}else if(total % 2 === 0 && userChoice.toLowerCase()==='pari'){
-    console.log('utente ha vinto');
-
-}else if(total % 2 !=0 && userChoice.toLowerCase()==='dispari'){
-    console.log('utente ha vinto')
-
+//controllo prima se nel prompt di prima l' utente abbia inserito un numero coerente con il gioco
+//poi controlliamo chi ha vinto
+if(userNumber<1 || userNumber>5){
+    console.log('attenzione hai selezionato un numero non compreso tra 1 e 5');
+    
 }else{
-    console.log('il computer ha vinto')
+    if(userChoice.toLowerCase() != "pari" && userChoice.toLowerCase() != "dispari"){
+        console.log('attenzione non hai dato una scelta')
+    }else if(total % 2 === 0 && userChoice.toLowerCase()==='pari'){
+        console.log('utente ha vinto');
+    
+    }else if(total % 2 !=0 && userChoice.toLowerCase()==='dispari'){
+        console.log('utente ha vinto')
+    
+    }else{
+        console.log('il computer ha vinto')
+    }
 }
+
 
 
 
